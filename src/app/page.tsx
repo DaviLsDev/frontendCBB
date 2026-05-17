@@ -1,65 +1,129 @@
-import Image from "next/image";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      <Navbar />
+
+      {/* HERO */}
+      <section className="hero">
+        <div className="hero-inner">
+          <div className="hero-line" />
+          <h1>Uma comunidade com propósito missionário</h1>
+          <p>Conheça nossa missão, nossos missionários e como fazer parte desse chamado ao redor do mundo.</p>
+          <div className="hero-btns">
+            <a href="/missoes" className="btn-white">Ver nossas missões</a>
+            <a href="/sobre" className="btn-outline">Quem somos</a>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* BEM-VINDO */}
+      <section className="section-white">
+        <div className="container">
+          <div className="grid-2">
+            <div className="section-body-text">
+              <div className="section-line" />
+              <h2 className="section-title" style={{marginBottom: "24px"}}>Bem-vindo à Comunidade Batista em Barcelos</h2>
+              <p>Somos uma comunidade de fé comprometida com o evangelho, com as missões e com as pessoas. Acreditamos que a fé se vive em comunidade.</p>
+              <p>Enviamos missionários ao mundo, crendo que cada vida transformada é parte do plano de Deus para as nações.</p>
+              <a href="/sobre" className="btn-dark-outline">Nossa história →</a>
+            </div>
+            <div className="photo-placeholder">
+              <span style={{fontSize: "40px", color: "#ddd"}}>✝</span>
+              <span>Foto da equipe / pastor</span>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* IDENTIDADE */}
+      <section className="section-gray">
+        <div className="container">
+          <div className="section-line" />
+          <h2 className="section-title">Identidade</h2>
+          <div className="grid-3">
+            {[
+              { title: "Missão", text: "Proclamar o evangelho de Cristo a todas as nações, discipulando e servindo com amor." },
+              { title: "Visão", text: "Ser uma comunidade que influencia Barcelos e envia missionários ao mundo." },
+              { title: "Valores", text: "Palavra, oração, comunidade, missões e generosidade como estilo de vida." },
+            ].map((item) => (
+              <div key={item.title} className="card-identity">
+                <div className="card-identity-line" />
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* MISSÕES */}
+      <section className="section-dark">
+        <div className="container">
+          <div className="missions-header">
+            <div>
+              <div className="section-line-light" />
+              <h2 className="section-title-light">Nossas missões</h2>
+            </div>
+            <a href="/missoes">Ver todas →</a>
+          </div>
+          <div className="grid-3">
+            {[
+              { flag: "🇿🇼", pais: "Zimbábue", desc: "África · Evangelismo e plantio de igrejas", href: "/missoes/zimbabue" },
+              { flag: "🇲🇿", pais: "Moçambique", desc: "África · Discipulado em comunidades rurais", href: "/missoes/mocambique" },
+              { flag: "🇵🇾", pais: "Paraguai", desc: "América do Sul · Missão urbana", href: "/missoes/paraguai" },
+            ].map((m) => (
+              <a key={m.pais} href={m.href} className="card-mission">
+                <div className="card-mission-flag">{m.flag}</div>
+                <h3>{m.pais}</h3>
+                <p>{m.desc}</p>
+                <div className="card-mission-bar" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* COMO PARTICIPAR */}
+      <section className="section-white">
+        <div className="container">
+          <div className="section-line" />
+          <h2 className="section-title">Como participar</h2>
+          <div className="grid-4">
+            {[
+              { icon: "🙏", title: "Oração", text: "Interceda pelos nossos missionários e campos." },
+              { icon: "💛", title: "Doação", text: "Contribua financeiramente com as missões." },
+              { icon: "📢", title: "Divulgação", text: "Compartilhe o trabalho missionário." },
+              { icon: "✈️", title: "Ir ao campo", text: "Participe de viagens missionárias." },
+            ].map((item) => (
+              <div key={item.title} className="card-participate">
+                <div className="card-participate-icon">{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="footer">
+        <div className="footer-inner">
+          <div>
+            <div className="footer-logo">Comunidade Batista em Barcelos</div>
+            <div className="footer-sub">Proclamando o evangelho a todas as nações</div>
+          </div>
+          <div className="footer-links">
+            <a href="/">Início</a>
+            <a href="/sobre">Sobre</a>
+            <a href="/missoes">Missões</a>
+            <a href="/contato">Contato</a>
+          </div>
+        </div>
+        <div className="footer-bottom">© 2025 CBB — Todos os direitos reservados</div>
+      </footer>
+
+    </main>
   );
 }
