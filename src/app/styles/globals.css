@@ -14,7 +14,7 @@ body {
   background-color: #ffffff;
   color: #1a1a1a;
   font-family: Georgia, serif;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 
@@ -388,7 +388,21 @@ body {
   transform: translateY(-2px);
 }
 
+/* CONTAINER DO MAPA (Adicionar no globals.css) */
+.map-container {
+  width: 100%;
+  height: 320px; /* Altura ideal para telemóveis */
+  border-radius: 16px;
+  overflow: hidden; /* Garante que o mapa fica com os cantos arredondados */
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
 
+/* Força o mapa do Google a preencher o espaço responsivo */
+.map-container iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
 
 @media (min-width: 768px) {
   .container {

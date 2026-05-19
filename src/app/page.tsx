@@ -5,7 +5,6 @@ export default function Home() {
     <main>
       <Navbar />
 
-
       <section className="hero">
         <div className="hero-inner">
           <div className="hero-line" />
@@ -17,7 +16,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
       <section className="section-white">
         <div className="container">
@@ -36,7 +34,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
       <section className="section-gray">
         <div className="container">
@@ -57,7 +54,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
       <section className="section-dark">
         <div className="container">
@@ -85,7 +81,6 @@ export default function Home() {
         </div>
       </section>
 
-
       <section className="section-white">
         <div className="container">
           <div className="section-line" />
@@ -108,6 +103,39 @@ export default function Home() {
       </section>
 
 
+      <section className="section-gray" id="onde-encontrar">
+        <div className="container">
+          <div className="section-line" />
+          <h2 className="section-title">Onde nos Encontrar</h2>
+
+          <div className="grid-2">
+            <div className="section-body-text">
+              <p><strong>Endereço:</strong><br />
+              Rua Couto de Manhente, nº 1155<br />
+              Manhente- 4750-734 — Barcelos</p>
+
+              <p><strong>Nossos Cultos:</strong><br />
+              Domingos às 10:30h e 18:30<br />
+              Quartas-feiras às 20h</p>
+
+              <p>Venha fazer-nos uma visita! Ficaremos muito felizes em receber você e a sua família.</p>
+            </div>
+
+           <div className="map-container">
+
+             <iframe
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11945.104423841667!2d-8.616658976802809!3d41.541618651071474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24530024fb2d75%3A0x654f8150f2dea916!2sIgreja%20%7C%20Comunidade%20Batista%20em%20Barcelos%20%7C%20CBB!5e0!3m2!1spt-PT!2spt!4v1779209156984!5m2!1spt-PT!2spt"
+               style={{ border: 0 }}
+               allowFullScreen={true}
+               loading="lazy"
+               referrerPolicy="no-referrer-when-downgrade"
+             >
+             </iframe>
+           </div>
+          </div>
+        </div>
+      </section>
+
       <footer className="footer">
         <div className="footer-inner">
           <div>
@@ -121,7 +149,7 @@ export default function Home() {
             <a href="/contato">Contato</a>
           </div>
         </div>
-        <div className="footer-bottom">© 2025 CBB — Todos os direitos reservados</div>
+        <div className="footer-bottom">© 2026 CBB — Todos os direitos reservados</div>
       </footer>
 
     </main>
