@@ -87,10 +87,10 @@ export default function Home() {
           <h2 className="section-title">Como participar</h2>
           <div className="grid-4">
             {[
-              { icon: "🙏", title: "Oração", text: "Interceda pelos nossos missionários e campos." },
-              { icon: "💛", title: "Doação", text: "Contribua financeiramente com as missões." },
-              { icon: "📢", title: "Divulgação", text: "Compartilhe o trabalho missionário." },
-              { icon: "✈️", title: "Ir ao campo", text: "Participe de viagens missionárias." },
+              { title: "Oração", text: "Interceda pelos nossos missionários e campos." },
+              { title: "Doação", text: "Contribua financeiramente com as missões." },
+              { title: "Divulgação", text: "Compartilhe o trabalho missionário." },
+              { title: "Ir ao campo", text: "Participe de viagens missionárias." },
             ].map((item) => (
               <div key={item.title} className="card-participate">
                 <div className="card-participate-icon">{item.icon}</div>
