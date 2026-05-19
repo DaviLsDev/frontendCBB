@@ -5,7 +5,7 @@ export default function Home() {
     <main>
       <Navbar />
 
-      {/* HERO */}
+
       <section className="hero">
         <div className="hero-inner">
           <div className="hero-line" />
@@ -18,7 +18,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BEM-VINDO */}
+
       <section className="section-white">
         <div className="container">
           <div className="grid-2">
@@ -37,7 +37,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* IDENTIDADE */}
+
       <section className="section-gray">
         <div className="container">
           <div className="section-line" />
@@ -58,7 +58,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MISSÕES */}
+
       <section className="section-dark">
         <div className="container">
           <div className="missions-header">
@@ -85,7 +85,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* COMO PARTICIPAR */}
+
       <section className="section-white">
         <div className="container">
           <div className="section-line" />
@@ -107,7 +107,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
+
       <footer className="footer">
         <div className="footer-inner">
           <div>

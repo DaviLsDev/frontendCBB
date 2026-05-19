@@ -14,7 +14,7 @@ export default function Missoes() {
     <main>
       <Navbar />
 
-      {/* HERO */}
+
       <section style={{background: "#0d1f3c", padding: "120px 0 80px"}}>
         <div className="container">
           <div className="section-line-light" />
@@ -27,7 +27,7 @@ export default function Missoes() {
         </div>
       </section>
 
-      {/* CARDS */}
+
       <section className="section-white">
         <div className="container">
           <div className="section-line" />
@@ -57,7 +57,7 @@ export default function Missoes() {
         </div>
       </section>
 
-      {/* COMO AJUDAR */}
+
       <section className="section-gray">
         <div className="container">
           <div className="section-line" />
@@ -79,7 +79,7 @@ export default function Missoes() {
         </div>
       </section>
 
-      {/* FOOTER */}
+
       <footer className="footer">
         <div className="footer-inner">
           <div>
