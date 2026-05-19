@@ -35,7 +35,7 @@ export default function Missoes() {
           <div className="grid-3">
             {missoes.map((m) => (
               <a key={m.pais} href={m.href} className="card-missao-pais">
-                <div style={{fontSize: "40px", marginBottom: "20px"}}>{m.flag}</div>
+                <div style={{fontSize: "40px", marginBottom: "20px"}}></div>
                 <div style={{fontSize: "10px", fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", color: "#999", marginBottom: "8px", fontFamily: "sans-serif"}}>
                   {m.continente}
                 </div>
@@ -64,10 +64,10 @@ export default function Missoes() {
           <h2 className="section-title">Como apoiar as missões</h2>
           <div className="grid-4">
             {[
-              { icon: "🙏", title: "Oração", text: "Interceda por cada missionário e campo missionário." },
-              { icon: "💛", title: "Doação", text: "Contribua financeiramente de forma regular ou pontual." },
-              { icon: "📢", title: "Divulgação", text: "Compartilhe o trabalho missionário da CBB." },
-              { icon: "✈️", title: "Ir ao campo", text: "Participe de viagens missionárias de curto prazo." },
+              { title: "Oração", text: "Interceda por cada missionário e campo missionário." },
+              { title: "Doação", text: "Contribua financeiramente de forma regular ou pontual." },
+              { title: "Divulgação", text: "Compartilhe o trabalho missionário da CBB." },
+              { title: "Ir ao campo", text: "Participe de viagens missionárias de curto prazo." },
             ].map((item) => (
               <div key={item.title} className="card-participate">
                 <div className="card-participate-icon">{item.icon}</div>
