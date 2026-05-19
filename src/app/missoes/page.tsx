@@ -70,7 +70,7 @@ export default function Missoes() {
               { title: "Ir ao campo", text: "Participe de viagens missionárias de curto prazo." },
             ].map((item) => (
               <div key={item.title} className="card-participate">
-                <div className="card-participate-icon">{item.icon}</div>
+                <div className="card-participate-icon"></div>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </div>

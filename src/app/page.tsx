@@ -66,12 +66,12 @@ export default function Home() {
           </div>
           <div className="grid-3">
             {[
-              { flag: "🇿🇼", pais: "Zimbábue", desc: "África · Evangelismo e plantio de igrejas", href: "/missoes/zimbabue" },
-              { flag: "🇲🇿", pais: "Moçambique", desc: "África · Discipulado em comunidades rurais", href: "/missoes/mocambique" },
-              { flag: "🇵🇾", pais: "Paraguai", desc: "América do Sul · Missão urbana", href: "/missoes/paraguai" },
+              { pais: "Zimbábue", desc: "África · Evangelismo e plantio de igrejas", href: "/missoes/zimbabue" },
+              { pais: "Moçambique", desc: "África · Discipulado em comunidades rurais", href: "/missoes/mocambique" },
+              { pais: "Paraguai", desc: "América do Sul · Missão urbana", href: "/missoes/paraguai" },
             ].map((m) => (
               <a key={m.pais} href={m.href} className="card-mission">
-                <div className="card-mission-flag">{m.flag}</div>
+                <div className="card-mission-flag"></div>
                 <h3>{m.pais}</h3>
                 <p>{m.desc}</p>
                 <div className="card-mission-bar" />
@@ -93,7 +93,7 @@ export default function Home() {
               { title: "Ir ao campo", text: "Participe de viagens missionárias." },
             ].map((item) => (
               <div key={item.title} className="card-participate">
-                <div className="card-participate-icon">{item.icon}</div>
+                <div className="card-participate-icon"></div>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </div>

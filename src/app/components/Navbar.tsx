@@ -9,6 +9,7 @@ export default function Navbar() {
         <Link href="/sobre">Sobre</Link>
         <Link href="/missoes">Missões</Link>
         <Link href="/contato">Contato</Link>
+        <Link href="/localização">Localização</Link>
       </div>
       <Link href="/missoes" className="navbar-cta">Apoiar missões</Link>
     </nav>
