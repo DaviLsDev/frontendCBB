@@ -35,7 +35,7 @@ export default function Missoes() {
           <div className="grid-3">
             {missoes.map((m) => (
               <a key={m.pais} href={m.href} className="card-missao-pais">
-                <div style={{fontSize: "40px", marginBottom: "20px"}}>{m.flag}</div>
+                <div style={{fontSize: "40px", marginBottom: "20px"}}></div>
                 <div style={{fontSize: "10px", fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", color: "#999", marginBottom: "8px", fontFamily: "sans-serif"}}>
                   {m.continente}
                 </div>
