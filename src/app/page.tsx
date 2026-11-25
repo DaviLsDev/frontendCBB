@@ -63,6 +63,55 @@ const sedeSelecionada = sedes.find((s) => s.id === sedeAtiva) ?? sedes[0];
               { title: "Valores", text: "Palavra, oração, comunidade, missões e generosidade como estilo de vida." },
             ].map((item) => (
               <div key={item.title} className="identidade-item">
+              <div key={item.title} className="card-identity">
+                <div className="card-identity-line" />
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-dark">
+        <div className="container">
+          <div className="missions-header">
+            <div>
+              <div className="section-line-light" />
+              <h2 className="section-title-light">Nossas missões</h2>
+            </div>
+            <a href="/missoes">Ver todas →</a>
+          </div>
+          <div className="grid-3">
+            {[
+              { pais: "Zimbábue", desc: "África · Evangelismo e plantio de igrejas", href: "/missoes/zimbabue" },
+              { pais: "Moçambique", desc: "África · Discipulado em comunidades rurais", href: "/missoes/mocambique" },
+              { pais: "Paraguai", desc: "América do Sul · Missão urbana", href: "/missoes/paraguai" },
+            ].map((m) => (
+              <a key={m.pais} href={m.href} className="card-mission">
+                <div className="card-mission-flag"></div>
+                <h3>{m.pais}</h3>
+                <p>{m.desc}</p>
+                <div className="card-mission-bar" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-white">
+        <div className="container">
+          <div className="section-line" />
+          <h2 className="section-title">Como participar</h2>
+          <div className="grid-4">
+            {[
+              { title: "Oração", text: "Interceda pelos nossos missionários e campos." },
+              { title: "Doação", text: "Contribua financeiramente com as missões." },
+              { title: "Divulgação", text: "Compartilhe o trabalho missionário." },
+              { title: "Ir ao campo", text: "Participe de viagens missionárias." },
+            ].map((item) => (
+              <div key={item.title} className="card-participate">
+                <div className="card-participate-icon"></div>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </div>

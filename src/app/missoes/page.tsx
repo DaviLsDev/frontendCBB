@@ -75,7 +75,7 @@ export default function Missoes() {
               {  title: "Divulgação", text: "Compartilhe o trabalho missionário da CBB." },
             ].map((item) => (
               <div key={item.title} className="card-participate">
-                <div className="card-participate-icon">{item.icon}</div>
+                <div className="card-participate-icon"></div>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </div>

@@ -35,6 +35,13 @@ export default function Navbar() {
         <Link href="/missoes" className="navbar-cta">
           Apoiar missões
         </Link>
+      <Link href="/" className="navbar-logo">CBB Barcelos</Link>
+      <div className="navbar-links">
+        <Link href="/">Início</Link>
+        <Link href="/sobre">Sobre</Link>
+        <Link href="/missoes">Missões</Link>
+        <Link href="/contato">Contato</Link>
+        <Link href="/localização">Localização</Link>
       </div>
     </nav>
   );
