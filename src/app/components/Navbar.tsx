@@ -7,9 +7,9 @@ const links = [
   { href: "/", label: "Início" },
   { href: "/sobre", label: "Sobre" },
   { href: "/missoes", label: "Missões" },
+  { href: "/pequenos-grupos", label: "Pequenos Grupos" },
   { href: "/contato", label: "Contato" },
 ];
-
 export default function Navbar() {
   const pathname = usePathname();
 

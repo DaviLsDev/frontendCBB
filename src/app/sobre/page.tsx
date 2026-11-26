@@ -59,7 +59,7 @@ export default function Sobre() {
       <Navbar />
 
       {/* HERO */}
-      <section style={{ background: "#0d1f3c", padding: "120px 0 80px" }}>
+      <section className="page-hero">
         <div className="container">
           <div className="section-line-light" />
           <h1
@@ -90,7 +90,7 @@ export default function Sobre() {
         </div>
       </section>
 
-      {/* QUEM SOMOS */}
+
       <section className="section-white">
         <div className="container">
           <div className="section-line" />
@@ -106,7 +106,7 @@ export default function Sobre() {
         </div>
       </section>
 
-      {/* MISSÃO, VISÃO E PROPÓSITO */}
+
       <section className="section-gray">
         <div className="container">
           <div className="section-line" />
@@ -155,7 +155,7 @@ export default function Sobre() {
         </div>
       </section>
 
-      {/* MISSÕES */}
+
       <section className="section-white">
         <div className="container">
           <div className="section-line" />
@@ -178,7 +178,7 @@ export default function Sobre() {
         </div>
       </section>
 
-      {/* FOOTER */}
+
       <footer className="footer">
         <div className="footer-inner">
           <div>

@@ -12,14 +12,6 @@ const sedes = [
     mapEmbed:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11945.104423841667!2d-8.616658976802809!3d41.541618651071474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24530024fb2d75%3A0x654f8150f2dea916!2sIgreja%20%7C%20Comunidade%20Batista%20em%20Barcelos%20%7C%20CBB!5e0!3m2!1spt-PT!2spt!4v1779209156984!5m2!1spt-PT!2spt",
   },
-  {
-    id: "esposende",
-    nome: "CBB Esposende",
-    endereco: "Rua Exemplo, nº 100, Esposende",
-    mapEmbed:
-      "https://www.google.com/maps/embed?pb=...COLOCA_AQUI_O_EMBED_DE_ESPOSENDE...",
-  },
-  // adiciona mais sedes aqui, seguindo o mesmo formato
 ];
 export default function Home() {
 
@@ -85,18 +77,12 @@ const sedeSelecionada = sedes.find((s) => s.id === sedeAtiva) ?? sedes[0];
         Manhente- 4750-734 — Barcelos</p>
 
         <p><strong>Nossos Cultos:</strong><br />
-        Domingos às 10:30h e 18:30<br />
+        Domingos às 10:30h<br />
         Quartas-feiras às 20h</p>
 
         <p>Venha fazer-nos uma visita! Ficaremos muito felizes em receber você e a sua família.</p>
 
-        {/* NOVO botão */}
-        <button
-          className="btn-dark-outline"
-          onClick={() => setSedesModalOpen(true)}
-        >
-          Ver outras sedes
-        </button>
+
       </div>
 
       <div className="map-container">
@@ -111,7 +97,7 @@ const sedeSelecionada = sedes.find((s) => s.id === sedeAtiva) ?? sedes[0];
     </div>
   </div>
 
-  {/* NOVO modal */}
+
   {sedesModalOpen && (
     <div
       className="sedes-modal-overlay"
@@ -126,7 +112,7 @@ const sedeSelecionada = sedes.find((s) => s.id === sedeAtiva) ?? sedes[0];
           ×
         </button>
 
-        <h3 className="sedes-modal-title">As nossas sedes</h3>
+
 
         <div className="sedes-modal-grid">
           <div className="sedes-list">

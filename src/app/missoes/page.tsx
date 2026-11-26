@@ -1,55 +1,52 @@
 import Navbar from "../components/Navbar";
-
-const missoes = [
-  { pais: "Quênia", continente: "África", foco: "Evangelismo urbano e plantio de igrejas", href: "/missoes/quenia" },
-  { pais: "Moçambique", continente: "África", foco: "Discipulado em comunidades rurais", href: "/missoes/mocambique" },
-  {pais: "Etiópia", continente: "África", foco: "Missão entre povos não alcançados", href: "/missoes/etiopia" },
-  {pais: "Índia", continente: "Ásia", foco: "Plantio de igrejas e ensino bíblico", href: "/missoes/india" },
-  {pais: "Zimbábue", continente: "África", foco: "Evangelismo e plantio de igrejas", href: "/missoes/zimbabue" },
-  { pais: "Paraguai", continente: "América do Sul", foco: "Missão urbana e discipulado", href: "/missoes/paraguai" },
-];
+import { missoes } from "../data/missoes";
 
 export default function Missoes() {
   return (
     <main>
       <Navbar />
 
-
-      <section style={{ background: "#0d1f3c", padding: "120px 0 80px" }}>
+      <section className="page-hero">
         <div className="container">
           <div className="section-line-light" />
-          <h1 style={{ fontSize: "52px", fontWeight: 700, color: "#fff", fontFamily: "Georgia, serif", lineHeight: 1.2, maxWidth: "600px" }}>
-            Nossas missões
+          <h1 style={{ fontSize: "52px", fontWeight: 700, color: "#fff", fontFamily: "Georgia, serif", lineHeight: 1.2 }}>
+            Missões CBB
           </h1>
-          <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.5)", marginTop: "20px", maxWidth: "480px", lineHeight: 1.8, fontFamily: "sans-serif" }}>
-            A CBB apoia missionários em 6 países ao redor do mundo. Conheça cada campo e saiba como participar.
-
+          <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.6)", marginTop: "20px", maxWidth: "680px", lineHeight: 1.8, fontFamily: "sans-serif" }}>
+            Temos no nosso DNA fome por missões, em obediência à ordem dada pelo nosso Senhor e Salvador Jesus Cristo: “E disse-lhes: Ide por todo o mundo, pregai o evangelho a toda criatura” (Marcos 16.15).
           </p>
-           <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.5)", marginTop: "20px", maxWidth: "480px", lineHeight: 1.8, fontFamily: "sans-serif" }}>
-            Temos em nosso DNA fome por missões, em obediência a ordem dada pelo nosso senhor e salvador Jesus Cristo,
-            “E disse-lhes: Ide por todo o mundo, pregai o evangelho a toda criatura.” Marcos 16:15.
-            Entendemos que a igreja tem esse papel tão importante em anunciar o evangelho da reconciliação através de Jesus Cristo.
-           </p>
+          <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.6)", marginTop: "12px", maxWidth: "680px", lineHeight: 1.8, fontFamily: "sans-serif" }}>
+            Entendemos que a igreja tem o papel de anunciar o evangelho da reconciliação através de Jesus Cristo. E não só anuncia, como também cuida daqueles que vêm até nós.
+          </p>
         </div>
       </section>
-
 
       <section className="section-white">
         <div className="container">
           <div className="section-line" />
           <h2 className="section-title">Campos missionários</h2>
-          <div className="grid-3">
+          <div className="grid-2">
             {missoes.map((m) => (
-              <a key={m.pais} href={m.href} className="card-missao-pais">
-                <div style={{ fontSize: "40px", marginBottom: "20px" }}>{m.flag}</div>
-                <div style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", color: "#999", marginBottom: "8px", fontFamily: "sans-serif" }}>
-                  {m.continente}
+              <a key={m.slug} href={`/missoes/${m.slug}`} className="card-missao-pais">
+                <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
+                  {m.paises.map((p) => (
+                    <img
+                      key={p.codigo}
+                      src={`https://flagcdn.com/w80/${p.codigo}.png`}
+                      alt={p.nome}
+                      width={44}
+                      style={{ borderRadius: "4px", boxShadow: "0 1px 4px rgba(0,0,0,0.2)" }}
+                    />
+                  ))}
                 </div>
-                <h3 style={{ fontSize: "22px", fontWeight: 700, color: "#0d1f3c", fontFamily: "Georgia, serif", marginBottom: "10px" }}>
-                  {m.pais}
+                <div style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", color: "#999", marginBottom: "8px", fontFamily: "sans-serif" }}>
+                  {m.continente}{m.local ? ` · ${m.local}` : ""}
+                </div>
+                <h3 style={{ fontSize: "24px", fontWeight: 700, color: "#0d1f3c", fontFamily: "Georgia, serif", marginBottom: "10px" }}>
+                  {m.titulo}
                 </h3>
-                <p style={{ fontSize: "13px", color: "#888", lineHeight: 1.7, fontFamily: "sans-serif", marginBottom: "24px" }}>
-                  {m.foco}
+                <p style={{ fontSize: "14px", color: "#888", lineHeight: 1.7, fontFamily: "sans-serif", marginBottom: "24px" }}>
+                  {m.resumo}
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                   <div style={{ width: "20px", height: "2px", background: "#0d1f3c" }} />
@@ -63,19 +60,18 @@ export default function Missoes() {
         </div>
       </section>
 
-
       <section className="section-gray">
         <div className="container">
           <div className="section-line" />
-          <h2 className="section-title">Como apoiar as missões</h2>
-          <div className="grid-4">
+          <h2 className="section-title">Os três pilares do evangelismo</h2>
+          <div className="grid-3">
             {[
-              { title: "Oração", text: "Interceda por cada missionário e campo missionário." },
-              { title: "Doação", text: "Contribua financeiramente de forma regular ou pontual." },
-              {  title: "Divulgação", text: "Compartilhe o trabalho missionário da CBB." },
+              { title: "Orar", text: "Interceder por cada missionário e por cada campo." },
+              { title: "Enviar recursos", text: "Contribuir para que o trabalho possa continuar." },
+              { title: "Ir", text: "Levar o evangelho, vivido por inteiro, a todos os lugares." },
             ].map((item) => (
-              <div key={item.title} className="card-participate">
-                <div className="card-participate-icon">{item.icon}</div>
+              <div key={item.title} className="card-identity">
+                <div className="card-identity-line" />
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </div>
@@ -83,7 +79,6 @@ export default function Missoes() {
           </div>
         </div>
       </section>
-
 
       <footer className="footer">
         <div className="footer-inner">

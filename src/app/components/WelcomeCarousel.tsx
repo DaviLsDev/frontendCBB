@@ -6,7 +6,12 @@ interface Slide {
   title: string;
   paragraphs: string[];
   link: { href: string; label: string };
-  image: { src: string; alt: string } | null;
+  image: {
+    src: string;
+    alt: string;
+    position?: string;
+    filter?: string;
+  } | null;
 }
 
 const slides: Slide[] = [
@@ -17,7 +22,11 @@ const slides: Slide[] = [
       "Enviamos missionários ao mundo, crendo que cada vida transformada é parte do plano de Deus para as nações.",
     ],
     link: { href: "/sobre", label: "Nossa história →" },
-    image: null,
+    image: {
+      src: "/carrossel/bemvindo.jpg",
+      alt: "Bíblia aberta durante o culto",
+      position: "center",
+    },
   },
   {
     title: "Cultos e Comunhão",
@@ -26,7 +35,12 @@ const slides: Slide[] = [
       "Cada culto é uma oportunidade de renovação espiritual e conexão com a comunidade.",
     ],
     link: { href: "/sobre#cultos", label: "Nossos horários →" },
-    image: null,
+    image: {
+      src: "/carrossel/cultos.jpg",
+      alt: "Irmãos a adorar durante o culto",
+      position: "center 60%",
+      filter: "brightness(1.3) contrast(1.05)",
+    },
   },
   {
     title: "Missões ao Redor do Mundo",
@@ -35,19 +49,24 @@ const slides: Slide[] = [
       "Acreditamos no poder transformador da fé compartilhada além-fronteiras.",
     ],
     link: { href: "/missoes", label: "Conheça nossas missões →" },
-    image: null,
+    image: {
+      src: "/carrossel/missoes.jpg",
+      alt: "Mapa-múndi",
+      position: "center top",
+      filter: "brightness(0.92)",
+    },
   },
 ];
 
 export default function WelcomeCarousel() {
   const [current, setCurrent] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
+ useEffect(() => {
+     const timer = setInterval(() => {
+       setCurrent((prev) => (prev + 1) % slides.length);
+     }, 3500);
+     return () => clearInterval(timer);
+   }, []);
 
   const goTo = (index: number) => setCurrent(index);
   const prev = () => setCurrent((c) => (c - 1 + slides.length) % slides.length);
@@ -84,12 +103,19 @@ export default function WelcomeCarousel() {
                     </a>
                   </div>
 
-                  <div className="photo-placeholder">
+                  <div className={slide.image ? "photo-frame" : "photo-placeholder"}>
                     {slide.image ? (
                       <img
                         src={slide.image.src}
                         alt={slide.image.alt}
-                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          objectPosition: slide.image.position ?? "center",
+                          filter: slide.image.filter,
+                          display: "block",
+                        }}
                       />
                     ) : (
                       <>
