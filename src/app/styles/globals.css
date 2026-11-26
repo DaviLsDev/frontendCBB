@@ -27,8 +27,10 @@ body {
 }
 
 
+
 .navbar {
   width: 100%;
+  min-height: 97px;
   background-color: #10152b;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
@@ -99,35 +101,106 @@ body {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-@media (max-width: 768px) {
-  .navbar-links {
-    display: none;
+/* BOTÃO MOBILE */
+.navbar-mobile-button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.navbar-mobile-button span {
+  line-height: 1;
+  transform: translateY(-4px);
+}
+
+/* RESPONSIVIDADE MOBILE */
+@media (max-width: 767px) {
+  .navbar {
+    position: relative;
+    min-height: 97px;
+    padding: 12px 20px;
+  }
+
+  .navbar-logo-svg {
+    height: 72px;
+    width: auto;
+  }
+
+  .navbar-mobile-button {
+    display: flex;
+    flex-shrink: 0;
   }
 
   .navbar-right {
-    margin-left: auto;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px 24px;
+    background-color: #10152b;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    z-index: 999;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .navbar-right.menu-open {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .navbar-link {
+    display: block;
+    padding: 15px 4px;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .navbar-cta {
-    padding: 6px 14px;
-    font-size: 13px;
+    display: block;
+    text-align: center;
+    padding: 12px;
+    font-size: 14px;
   }
 }
 
+/* DESKTOP */
 @media (min-width: 768px) {
   .navbar {
+    min-height: 100px;
     padding: 8px 64px;
   }
+
   .navbar-logo-svg {
     height: 84px;
   }
+
   .navbar-right {
     gap: 48px;
   }
+
   .navbar-links {
     gap: 40px;
   }
 }
+
 @media (max-width: 768px) {
   .hero {
     background-position: 30% center;
